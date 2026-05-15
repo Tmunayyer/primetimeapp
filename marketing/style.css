@@ -337,22 +337,20 @@ section.bay { padding: 96px 0; }
 .read-card .ring {
   width: 64px; height: 64px;
   border-radius: 50%;
-  border: 6px solid var(--muted-2);
   position: relative;
+  background:
+    conic-gradient(currentColor 0 var(--fill, 50%), var(--muted-2) 0 100%);
 }
 .read-card .ring::before {
   content: "";
   position: absolute;
-  inset: -6px;
-  border: 6px solid transparent;
+  inset: 6px;
   border-radius: 50%;
-  border-top-color: currentColor;
-  border-right-color: currentColor;
-  transform: rotate(20deg);
+  background: var(--paper);
 }
-.read-card.teal  .ring { color: var(--teal); }
-.read-card.green .ring { color: var(--green); }
-.read-card.red   .ring { color: var(--red); }
+.read-card.teal  .ring { color: var(--teal); --fill: 25%; }
+.read-card.green .ring { color: var(--green); --fill: 80%; }
+.read-card.red   .ring { color: var(--red); --fill: 100%; }
 .read-card h3 {
   font-family: var(--display);
   font-weight: 900;
